@@ -74,8 +74,9 @@ const ContactSection = () => {
               <div>
                 <h4 className="font-display text-primary-foreground uppercase tracking-wide text-sm mb-1">Office Address</h4>
                 <p className="font-body text-steel text-sm leading-relaxed">
-                  Rout Enterprises<br />
-                  Mumbai, Maharashtra, India
+                  102/A-Wing, Saipooja Apt,<br />
+                  Trivedi Nagar, Saravali,<br />
+                  Boisar — 401501, Maharashtra, India
                 </p>
               </div>
             </div>
