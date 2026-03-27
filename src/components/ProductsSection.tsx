@@ -1,3 +1,4 @@
+import { Download } from "lucide-react";
 import flangesImg from "@/assets/flanges.jpg";
 import fastenersImg from "@/assets/fasteners.jpg";
 import wiresImg from "@/assets/wires.jpg";
@@ -7,28 +8,33 @@ import brightBarsImg from "@/assets/bright-bars.jpg";
 const products = [
   {
     name: "Flanges",
-    description: "Slip-on, weld neck, blind, socket weld & lap joint flanges in all grades and sizes.",
+    description: "Slip-on, weld neck, blind, socket weld & lap joint flanges in all grades and sizes. ASME B16.5, B16.47, DIN standards.",
     image: flangesImg,
+    catalogue: "/catalogues/Flanges.pdf",
   },
   {
     name: "Fasteners",
     description: "High-strength bolts, nuts, screws, studs & washers for critical applications.",
     image: fastenersImg,
+    catalogue: null,
   },
   {
-    name: "Wires",
-    description: "Cold-drawn & bright annealed wires for industrial, medical & construction use.",
+    name: "Wires & Wire Rods",
+    description: "Wire rods (5.5–39.5mm) & wires (0.09–15mm) — MIG, TIG, spring, rope, cold heading & more.",
     image: wiresImg,
+    catalogue: "/catalogues/Wires.pdf",
   },
   {
-    name: "Profiles",
-    description: "Custom & standard profiles — angles, channels, T-bars & structural sections.",
+    name: "Profiles & Flat Bars",
+    description: "Drawn flat bars, angles, channels, T-bars in 304, 316, 321 & other grades.",
     image: profilesImg,
+    catalogue: "/catalogues/Profiles.pdf",
   },
   {
     name: "Bright Bars",
-    description: "Precision-ground, polished bright bars in round, flat, square & hex shapes.",
+    description: "Round, hex, square & forged bars (2–600mm). Cold drawn, peeled, polished & centreless ground.",
     image: brightBarsImg,
+    catalogue: "/catalogues/Bright_bars.pdf",
   },
 ];
 
@@ -69,9 +75,20 @@ const ProductsSection = () => {
                 <h3 className="font-display text-xl font-semibold text-foreground uppercase tracking-wide mb-2">
                   {product.name}
                 </h3>
-                <p className="font-body text-muted-foreground text-sm leading-relaxed">
+                <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">
                   {product.description}
                 </p>
+                {product.catalogue && (
+                  <a
+                    href={product.catalogue}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-body font-semibold text-forge hover:text-foreground transition-colors duration-300 uppercase tracking-wider"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download Catalogue
+                  </a>
+                )}
               </div>
               <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-forge-gradient flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span className="text-primary-foreground font-display text-xs font-bold">→</span>
